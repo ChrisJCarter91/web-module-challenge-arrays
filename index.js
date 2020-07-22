@@ -40,15 +40,13 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(){
-
-        if(originalFlavors.length === 31){
+function is31Flavors(array){
+        if(array.length === 31){
             return "true"
-        }
-        else {
+        } else {
             return "false"
         }
-};
+}
 
 console.log(is31Flavors(originalFlavors));
 
@@ -121,11 +119,17 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(/*code here*/){
+function removeFlavorByName(array, flavor){
 
-    /*code here*/
-
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === flavor) {
+            array.splice(i, 1)
+        }
+    }
+    return array;
 }
+
+console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
